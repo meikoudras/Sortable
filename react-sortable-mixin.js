@@ -120,13 +120,13 @@
 						}
 
 						newState[_getModelName(this)] = items;
-						
+
 						if (copyOptions.stateHandler) {
 							this[copyOptions.stateHandler](newState);
 						} else {
 							this.setState(newState);
 						}
-						
+
 						(this !== _activeComponent) && _activeComponent.setState(remoteState);
 					}
 
@@ -136,7 +136,7 @@
 				}.bind(this);
 			}, this);
 
-			DOMNode = this.getDOMNode() ? (this.refs[options.ref] || this).getDOMNode() : this.refs[options.ref] || this;
+			DOMNode = this;
 
 			/** @namespace this.refs — http://facebook.github.io/react/docs/more-about-refs.html */
 			this._sortableInstance = Sortable.create(DOMNode, copyOptions);
